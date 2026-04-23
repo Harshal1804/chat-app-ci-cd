@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #1e1f22;
+            color: white;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #2b2d31;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #1e1f22;
+            color: white;
+        }
+
+        /* Chat area */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #313338;
+        }
+
+        .chat-header {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+            font-weight: bold;
+        }
+
+        #chat {
+            flex: 1;
+            list-style: none;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #chat li {
+            background: #383a40;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .username {
+            color: #5865f2;
+            font-weight: bold;
+        }
+
+        .input-area {
+            display: flex;
+            padding: 10px;
+            background: #2b2d31;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #1e1f22;
+            color: white;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #5865f2;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4752c4;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h3>Chat</h3>
+    <input id="username" placeholder="Enter username">
+</div>
+
+<!-- Chat Area -->
+<div class="chat-container">
+
+    <div class="chat-header">
+        General Chat
+    </div>
+
+    <ul id="chat"></ul>
+
+    <div class="input-area">
+        <input id="msg" placeholder="Type message">
+        <button onclick="sendMsg()">Send</button>
+    </div>
+
+</div>
+
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script src="/static/script.js"></script>
+
+</body>
+</html>
